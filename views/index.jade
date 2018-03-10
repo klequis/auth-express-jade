@@ -20,18 +20,11 @@ block content
   h2 Database
   p The app uses MySQL with one table named tbl_users
   pre
-    SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";<br>
-    SET time_zone = "+00:00";<br>
+    CREATE TABLE `db_users`.`tbl_users` (
+      `id` INT(11) NOT NULL AUTO_INCREMENT ,
+      `user` VARCHAR(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+      `pass` VARCHAR(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+      `full_name` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+      PRIMARY KEY (`id`)
+      ) ENGINE = InnoDB;
     <br>
-    CREATE TABLE tbl_users (<br>
-      id int(11) NOT NULL,<br>
-      username varchar(16) NOT NULL,<br>
-      password varchar(60) NOT NULL,<br>
-      full_name varchar(100) NOT NULL<br>
-    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;<br>
-    <br>
-    ALTER TABLE tbl_users<br>
-      ADD PRIMARY KEY (`id`);<br>
-    <br>
-    ALTER TABLE tbl_users<br>
-      MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
